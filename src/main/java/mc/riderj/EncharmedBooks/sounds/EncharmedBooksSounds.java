@@ -1,6 +1,7 @@
 package mc.riderj.EncharmedBooks.sounds;
 
 import mc.riderj.EncharmedBooks.EncharmedBooks;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,7 +13,7 @@ public class EncharmedBooksSounds {
     public static final DeferredRegister<SoundEvent> ENCHARMED_BOOKS_SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, EncharmedBooks.MODID);
 
     public static final RegistryObject<SoundEvent> DUCK_QUACK = ENCHARMED_BOOKS_SOUNDS.register("item_duck_toy_duck_quack", () ->
-                    SoundEvent.createFixedRangeEvent(new ResourceLocation(EncharmedBooks.MODID,"item_duck_toy_duck_quack"), 1.0F)
+                    SoundEvent.createFixedRangeEvent(new ResourceLocation(EncharmedBooks.MODID,"item_duck_toy_duck_quack"), 10.0F)
             );
 
     public static void register(IEventBus eventBus){
