@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import java.util.Random;
@@ -18,6 +19,7 @@ public class DuckyToyInstrumentItem extends Item {
 
     public DuckyToyInstrumentItem(Properties pProperties) {
         super(pProperties);
+
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
@@ -34,6 +36,11 @@ public class DuckyToyInstrumentItem extends Item {
 
             pPlayer.getCooldowns().addCooldown(this, 30);
         }
-        return InteractionResultHolder.pass(itemstack);
+        return InteractionResultHolder.consume(itemstack);
+    }
+
+    @Override
+    public UseAnim getUseAnimation(ItemStack pStack) {
+        return UseAnim.EAT;
     }
 }
